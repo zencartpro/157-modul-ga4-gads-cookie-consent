@@ -21,24 +21,25 @@ Es ist kein manuelles Einfügen irgendwelcher Scripts in irgendwelchen Shopdatei
 * Wenn Sie lediglich das Cookie Consent Banner und Google Ads verwenden wollen (für das Seitenaufruftracking verwenden Sie z.B. Matomo), dann ist das natürlich möglich, lassen Sie Google Analytics einfach deaktiviert und aktivieren Sie nur Cookie Consent und Google Ads.
 
 Hinweis zum Google Analytics Tracking:
-Es wird lediglich Google Analytics GA4 unterstützt!
+* Es wird lediglich Google Analytics GA4 unterstützt!
 Es ist also zwingend eine Google Analytics GA4 Property erforderlich, deren ID (beginnend mit G-) Sie in der Shopadministration angeben müssen.
 Dieses Modul trackt lediglich die Seitenaufrufe, es erfolgt KEIN erweitertes E-Commerce Tracking, Tracking irgendwelcher Events, usw.
 Das Tracking erfolgt mit der Einstellung anonymize IP
 Wird Google Analytics auf true gestellt, enthält der Quellcode zusätzlich auch eine Unterstützung für das Google Analytics Opt-Out Cookie, das häufig in Datenschutzerklärungen verwendet wird. Der dort vorgesehene Link "Google Analytics deaktivieren" wird also unterstützt.
 
 Hinweis zum Google Ads Conversion Tracking:
-Sie müssen in Google Ads unter Tools und Einstellungen > Conversions eine Conversion Aktion für den Kaufabschluss angelegt haben.
+* Sie müssen in Google Ads unter Tools und Einstellungen > Conversions eine Conversion Aktion für den Kaufabschluss angelegt haben.
 Es wird lediglich auf der checkout_success Seite der Bestellwert und die Bestellnummer erfasst und an Google Ads übermittelt.
 Die Conversions sind dann ausschließlich in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.
 
 Hinweis zur Cookie Consent Banner Funktionalität:
-Die Funktionalität ist detailliert beschrieben auf:
+* Die Funktionalität ist detailliert beschrieben auf:
 https://www.privacypolicies.com/cookie-consent/
 Damit dieses Tool die entsprechenden Javascripts bei Nicht-Zustimmung blocken kann, werden sie nicht einfach mit <script>irgendwas</script> aufgerufen, sondern mit z.B.
-<script type="text/plain" data-cookie-consent="tracking">irgendwas</script> 
+* <script type="text/plain" data-cookie-consent="tracking">irgendwas</script> 
 oder
-<script type="text/plain" data-cookie-consent="targeting"></script> 
+* <script type="text/plain" data-cookie-consent="targeting"></script> 
 Dieses Modul bindet die Javascripts für Google Analytics und Google Ads bereits so ein, falls das Cookie Consent Tool aktiviert ist.
 Es sind also keinerlei zusätzliche Änderungen in irgendwelchen Dateien nötig.
+
 Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müssen Sie deren Aufrufe entsprechend anpassen, damit sie von dem Tool erfasst werden können. 

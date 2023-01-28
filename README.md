@@ -32,9 +32,10 @@ Hinweis zum Google Ads Conversion Tracking:
 Es wird lediglich auf der checkout_success Seite der Bestellwert und die Bestellnummer erfasst und an Google Ads übermittelt.
 Die Conversions sind dann ausschließlich in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.
 
-Hinweis zur Cookie Consent Banner Funktionalität:
+Hinweise zur Cookie Consent Banner Funktionalität:
 * Die Funktionalität ist detailliert beschrieben auf:
 https://www.privacypolicies.com/cookie-consent/
+
 Damit dieses Tool die entsprechenden Javascripts bei Nicht-Zustimmung blocken kann, werden sie nicht einfach mit <script>irgendwas</script> aufgerufen, sondern mit z.B.
 * <script type="text/plain" data-cookie-consent="tracking">irgendwas</script> 
 oder
@@ -43,3 +44,5 @@ Dieses Modul bindet die Javascripts für Google Analytics und Google Ads bereits
 Es sind also keinerlei zusätzliche Änderungen in irgendwelchen Dateien nötig.
 
 Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müssen Sie deren Aufrufe entsprechend anpassen, damit sie von dem Tool erfasst werden können. 
+
+Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlossen wird das Cookie Consent Banner nicht geladen, um stets einen freien Zugang zu diesen Seiten zu ermöglichen. 

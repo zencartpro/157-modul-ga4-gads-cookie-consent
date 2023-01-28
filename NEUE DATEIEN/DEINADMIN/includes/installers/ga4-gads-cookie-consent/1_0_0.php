@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: 1_0_0.php 2023-01-25 16:47:51Z webchills $
+ * @version $Id: 1_0_0.php 2023-01-28 09:47:51Z webchills $
  */
 
 
@@ -36,7 +36,7 @@ $db->Execute("REPLACE INTO ".TABLE_CONFIGURATION_LANGUAGE." (configuration_title
 ('Google Ads ID', 'GA4_GADS_ID', 'Geben Sie Ihre Google Ads Tag ID ein<br>Hinweis: Diese ID beginnt normalerweise mit AW-.', 43),
 ('Google Ads Conversion Label', 'GA4_GADS_LABEL', 'Geben Sie Ihr Google Ads Conversion Label ein.<br>Hinweis: Dieser Wert besteht normalerweise aus etwa 20 alphanumerischen Zeichen.<br>', 43)");
 
-$admin_page = 'configInstantSearch';
+$admin_page = 'configGA4GADSCOOKIECONSENT';
 // delete configuration menu
 $db->Execute("DELETE FROM " . TABLE_ADMIN_PAGES . " WHERE page_key = '" . $admin_page . "' LIMIT 1;");
 // add configuration menu

@@ -9,7 +9,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2023-01-25 16:66:39Z webchills $
+ * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2023-01-29 05:53:39Z webchills $
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
@@ -74,37 +74,7 @@ $manufacturers_id = (isset($_GET['manufacturers_id'])) ? $_GET['manufacturers_id
 <?php echo rss_feed_link_alternate();?>
 <?php } ?>
 <!-- bof GA4/Gads/Cookie Consent -->
-<?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
-<?php 
-// Falls Sie im Shop weitere Sprachen als deutsch, englisch, französisch, italienisch oder spanisch aktiv haben, erweitern Sie die folgende Liste entsprechend
-$cookieconsentlanguage='en';
-if ($_SESSION['language']=='german') {$cookieconsentlanguage='de';} 
-if ($_SESSION['language']=='french') {$cookieconsentlanguage='fr';}
-if ($_SESSION['language']=='italian') {$cookieconsentlanguage='it';}
-if ($_SESSION['language']=='spanish') {$cookieconsentlanguage='es';}
-?>
-<?php if ($current_page_base!='privacy' && $current_page_base!='conditions' && $current_page_base!='impressum' && $current_page_base!='down_for_maintenance') { ?>
-<!-- Cookie Consent by PrivacyPolicies.com https://www.PrivacyPolicies.com -->
-<script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'ga4-gads-cookie-consent').'/cookie-consent.js'?>"></script>
-<?php require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/cookie-consent.php');?>
-<!-- End Cookie Consent by PrivacyPolicies.com https://www.PrivacyPolicies.com -->
-<?php } ?>
-<?php } ?>
-<?php 
-if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') {
-	require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/optout.php');
-}
-?>
-<?php 
-if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') {
-	require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/ga4.php');
-}
-?>
-<?php 
-if (defined('GA4_GADS_ENABLED') && GA4_GADS_ENABLED === 'true') {
-	require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/gads.php');
-}
-?>
+<?php require($template->get_template_dir('ga4-gads-cookie-consent.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/ga4-gads-cookie-consent.php'); ?>
 <!-- eof GA4/Gads/Cookie Consent -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script type="text/javascript">window.jQuery || document.write(unescape('%3Cscript type="text/javascript" src="<?php echo $template->get_template_dir('.js',DIR_WS_TEMPLATE, $current_page_base,'jscript'); ?>/jquery.min.js"%3E%3C/script%3E'));</script>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Google Analytics GA4, Google Ads, Cookie Consent für Zen Cart 1.5.7 deutsch</title>
+<title>Google Analytics GA4, Google Ads, Cookie Consent 1.1.0 für Zen Cart 1.5.7 deutsch</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-language" content="de">
@@ -12,7 +12,7 @@
 <body>
 <div id="wrapper">
 <div id="header">
-<h1>GA4 / Google Ads / Cookie Consent 1.0.0 für Zen Cart 1.5.7 deutsch</h1>
+<h1>GA4 / Google Ads / Cookie Consent 1.1.0 für Zen Cart 1.5.7 deutsch</h1>
 </div>
 
 <div id="slidetabsmenu" style="display: none;">
@@ -51,14 +51,31 @@ Wenn Sie lediglich das Cookie Consent Banner und Google Ads verwenden wollen (f�
 <strong>Hinweis zum Google Analytics Tracking:</strong><br>
 Es wird lediglich Google Analytics GA4 unterstützt!<br>
 Es ist also zwingend eine Google Analytics GA4 Property erforderlich, deren ID (beginnend mit G-) Sie in der Shopadministration angeben müssen.<br>
-Dieses Modul trackt lediglich die Seitenaufrufe, es erfolgt KEIN erweitertes E-Commerce Tracking, Tracking irgendwelcher  Events, usw.<br>
+Wenn nur Google Analytics Tracking aktiviert wird, werden lediglich die Seitenaufrufe erfasst, es erfolgt dann kein erweitertes E-Commerce Tracking irgendwelcher  Events.<br>
 Das Tracking erfolgt mit der Einstellung anonymize IP, was in GA4 automatisch ohne zusätzlichen Eintrag im Code aktiviert ist.<br>
 Wird Google Analytics auf true gestellt, enthält der Quellcode zusätzlich auch eine Unterstützung für das Google Analytics Opt-Out Cookie, das häufig in Datenschutzerklärungen verwendet wird. Der dort vorgesehene Link &quot;Google Analytics deaktivieren&quot; wird also unterstützt.<br>
+<br>
+<strong>Hinweis zum Google Analytics Conversion Tracking:</strong><br>
+Wenn auch das Google Analytics Conversion Tracking aktiviert wird, dann wird auf der checkout_success Seite das GA4 Standardevent purchase generiert und mit folgenden Werten an Google Analytics übermittelt:<br>
+transaction_id = Bestellnummer<br>
+affiliation = Versandart<br>
+value = Gesamtbestellwert<br>
+shipping = Versandkosten<br>
+currency = Währung<br>
+Weiterhin werden die bestellten Artikel übergeben:<br>
+item_name = Artikelname<br>
+item_category = Name der Kategorie des Artikels im Shop<br>
+list_position = 1 oder wenn mehrere Artikel bestellt werden entsprechend anders <br>
+item_variant = Attributwert falls Artikel ein Attribut hat<br>
+price = Artikelpreis<br>
+quantity = Artikelmenge<br>
+Andere Events als purchase werden nicht erfasst.
+<br>
 <br>
 <strong>Hinweis zum Google Ads Conversion Tracking:</strong><br>
 Sie müssen in Google Ads unter Tools und Einstellungen &gt; Conversions eine Conversion Aktion für den Kaufabschluss angelegt haben.<br>
 Es wird lediglich auf der checkout_success Seite der Bestellwert und die Bestellnummer erfasst und an Google Ads übermittelt.<br>
-Die Conversions sind dann ausschließlich in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.<br>
+Die Conversions sind dann  in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.<br>
     <br>
     <strong>Hinweise zur Cookie Consent Banner Funktionalität:</strong><br>
 Die Funktionalität ist detailliert beschrieben auf:<br>
@@ -72,7 +89,21 @@ Es sind also keinerlei zusätzliche Änderungen in irgendwelchen Dateien nötig.
 Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müssen Sie deren Aufrufe entsprechend anpassen, damit sie von dem Tool erfasst werden können. <br>
 Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlossen wird das Cookie Consent Banner nicht geladen, um stets einen freien Zugang zu diesen Seiten zu ermöglichen.
   </p>
-<h3>Copyright,  Lizenz, Credits</h3>
+<h3>Changelog, Copyright,  Lizenz, Credits</h3>
+<p>  Changelog Version 1.1.0<br>
+  2023-02-07<br>
+  <br>
+  - anonymize_ip aus den Codes entfernt, da in GA4 Properties ohnehin standardmäßig aktiviert<br>
+  - Integration von Conversion Tracking für Google Analytics
+  (Event purchase)<br>
+  - Anleitung aktualisiert
+  <br>
+  <br>
+  Changelog Version 1.0.0<br>
+2023-01-29<br>
+<br>
+- initial release
+</p>
 <p> (c) 2023 webchills (<a href="https://www.webchills.at" target="_blank">www.webchills.at</a>)<br>
 <br>
  Portions Copyright (c) 2003 osCommerce<br>
@@ -196,10 +227,31 @@ Zu dieser Seite wird dann im Consent Popup unter &quot;Mehr Informationen&quot; 
   Falls Sie Google Analytics verwenden wollen stellen Sie hier auf true.<br>
   Es wird lediglich Google Anayltics GA4 unterstützt!<br>
   Es ist also zwingend eine Google Analytics GA4 Property erforderlich, deren ID (beginnend mit G-) Sie dann weiter unten angeben müssen.<br>
-  Dieses Modul trackt lediglich die Seitenaufrufe, es erfolgt KEIN erweitertes E-Commerce Tracking, Tracking irgendwelcher Events, usw.<br>
-  Das Tracking erfolgt mit der Einstellung anonymize IP<br>
+  Diese Einstellung trackt lediglich die Seitenaufrufe, es erfolgt KEIN erweitertes E-Commerce Tracking irgendwelcher Events.<br>
+  Wenn Sie Bestellungen an Google Analytics übermitteln wollen, dann aktivieren Sie zusätzlich weiter unten das Google Analytics Conversion Tracking.
+  <br>
   Wird Google Analytics auf true gestellt, enthält der Quellcode zusätzlich auch eine Unterstützung für das Google Anayltics Opt-Out Cookie, das häufig in Datenschutzerklärungen verwendet wird. Der dort vorgesehen Link &quot;Google Analyltics deaktivieren&quot; wird also unterstützt.
   <br>
+  <br>
+  <strong> Google Analytics Conversion Tracking aktivieren:</strong><br>
+  true oder false<br>
+Ist nach der Installation auf false gestellt.<br>
+  Wenn auch das Google Analytics Conversion Tracking aktiviert wird, dann wird auf der checkout_success Seite das GA4 Standardevent purchase generiert und mit folgenden Werten an Google Analytics übermittelt:<br>
+transaction_id = Bestellnummer<br>
+affiliation = Versandart<br>
+value = Gesamtbestellwert<br>
+shipping = Versandkosten<br>
+currency = Währung<br>
+Weiterhin werden die bestellten Artikel übergeben:<br>
+item_name = Artikelname<br>
+item_category = Name der Kategorie des Artikels im Shop<br>
+list_position = 1 oder wenn mehrere Artikel bestellt werden entsprechend anders <br>
+item_variant = Attributwert falls Artikel ein Attribut hat<br>
+price = Artikelpreis<br>
+quantity = Artikelmenge<br>
+Andere Events als purchase werden nicht erfasst.<br>
+Bitte beachten, dass natürlich auch Google Analytics generell oben aktiviert sein muss.
+<br>
   <br>
   <strong>Google Ads Conversion Tracking aktivieren</strong><br>
 true oder false<br>

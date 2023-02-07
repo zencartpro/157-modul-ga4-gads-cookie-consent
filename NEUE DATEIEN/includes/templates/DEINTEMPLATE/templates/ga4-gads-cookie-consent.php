@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: ga4-gads-cookie-consent.php 2023-01-29 05:57:51Z webchills $
+ * @version $Id: ga4-gads-cookie-consent.php 2023-02-07 17:54:51Z webchills $
  */
 ?>
 <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
@@ -32,6 +32,11 @@ if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') {
 <?php 
 if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') {
 	require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/ga4.php');
+}
+?>
+<?php 
+if (defined('GA4_CONVERSIONS_ENABLED') && GA4_CONVERSIONS_ENABLED === 'true') {
+	require(DIR_WS_TEMPLATE . 'ga4-gads-cookie-consent/ga4-conversions.php');
 }
 ?>
 <?php 

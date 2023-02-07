@@ -22,15 +22,20 @@ Es ist kein manuelles Einfügen irgendwelcher Scripts in irgendwelchen Shopdatei
 
 Hinweis zum Google Analytics Tracking:
 * Es wird lediglich Google Analytics GA4 unterstützt!
-Es ist also zwingend eine Google Analytics GA4 Property erforderlich, deren ID (beginnend mit G-) Sie in der Shopadministration angeben müssen.
-Dieses Modul trackt lediglich die Seitenaufrufe, es erfolgt KEIN erweitertes E-Commerce Tracking, Tracking irgendwelcher Events, usw.
-Das Tracking erfolgt mit der Einstellung anonymize IP
-Wird Google Analytics auf true gestellt, enthält der Quellcode zusätzlich auch eine Unterstützung für das Google Analytics Opt-Out Cookie, das häufig in Datenschutzerklärungen verwendet wird. Der dort vorgesehene Link "Google Analytics deaktivieren" wird also unterstützt.
+* Es ist also zwingend eine Google Analytics GA4 Property erforderlich, deren ID (beginnend mit G-) Sie in der Shopadministration angeben müssen.
+* Wenn nur Google Analytics Tracking aktiviert wird, werden lediglich die Seitenaufrufe erfasst, es erfolgt dann kein erweitertes E-Commerce Tracking irgendwelcher Events.
+* Wird Google Analytics auf true gestellt, enthält der Quellcode zusätzlich auch eine Unterstützung für das Google Analytics Opt-Out Cookie, das häufig in Datenschutzerklärungen verwendet wird. Der dort vorgesehene Link "Google Analytics deaktivieren" wird also unterstützt.
+
+Hinweis zum Google Analytics Conversion Tracking:
+* Wenn auch das Google Analytics Conversion Tracking aktiviert wird, dann wird auf der checkout_success Seite das GA4 Standardevent purchase generiert und mit den entsprechenden Werten an Google Analytics übermittelt.
+* Übermittelt werden für die Gesamtbestellung transaction_id, affiliation, value, shipping, currency
+* Und die einzelnen Artikel mit: item_id, item_name, item_category, list_position, item_variant, price, quantity
+* Andere Events als purchase werden nicht erfasst. 
 
 Hinweis zum Google Ads Conversion Tracking:
 * Sie müssen in Google Ads unter Tools und Einstellungen > Conversions eine Conversion Aktion für den Kaufabschluss angelegt haben.
 Es wird lediglich auf der checkout_success Seite der Bestellwert und die Bestellnummer erfasst und an Google Ads übermittelt.
-Die Conversions sind dann ausschließlich in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.
+Die Conversions sind dann in Google Ads ersichtlich. Ein Tracking weiterer Events findet nicht statt.
 
 Hinweise zur Cookie Consent Banner Funktionalität:
 * Die Funktionalität ist detailliert beschrieben auf:

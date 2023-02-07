@@ -16,9 +16,13 @@ Layout und Anzeigestil des Cookie Consent Banners können in der Shopadministrat
 Auch die Eingabe von GA4 ID, Google Ads ID und Google Ads Conversion Label sind admingesteuert.
 Es ist kein manuelles Einfügen irgendwelcher Scripts in irgendwelchen Shopdateien nötig, das Modul ändert lediglich eine bestehende Shopdatei.
 
-* Wenn Sie lediglich das Cookie Consent Banner verwenden wollen, dann ist das natürlich möglich, lassen Sie Google Analytics und Google Ads einfach deaktiviert und aktivieren Sie nur Cookie Consent
-* Wenn Sie lediglich das Cookie Consent Banner und Google Analytics verwenden wollen, dann ist das natürlich möglich, lassen Sie Google Ads einfach deaktiviert und aktivieren Sie nur Cookie Consent und Google Analytics.
+* Wenn Sie lediglich das Cookie Consent Banner verwenden wollen, dann ist das natürlich möglich, lassen Sie Google Analytics, Google Analytics Conversion Tracking und Google Ads einfach deaktiviert und aktivieren Sie nur Cookie Consent
+* Wenn Sie lediglich das Cookie Consent Banner und Google Analytics verwenden wollen, dann ist das natürlich möglich, lassen Sie Google Ads einfach deaktiviert und aktivieren Sie nur Cookie Consent und Google Analytics und optional Google Analytics Conversion Tracking.
 * Wenn Sie lediglich das Cookie Consent Banner und Google Ads verwenden wollen (für das Seitenaufruftracking verwenden Sie z.B. Matomo), dann ist das natürlich möglich, lassen Sie Google Analytics einfach deaktiviert und aktivieren Sie nur Cookie Consent und Google Ads.
+
+Genereller Hinweis:
+* Falls Sie Google Analytics, Google Analytics Conversion Tracking und Google Ads Conversion Tracking aktivieren, passen Sie Ihre Datenschutzerklärung entsprechend an!
+* Betreiben Sie diese Dinge keinesfalls ohne korrekte Datenschutzerklärung und ohne aktiviertes Cookie Consent Tool! 
 
 Hinweis zum Google Analytics Tracking:
 * Es wird lediglich Google Analytics GA4 unterstützt!

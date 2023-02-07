@@ -16,7 +16,7 @@ if (defined('GA4_CONVERSIONS_ENABLED') && GA4_CONVERSIONS_ENABLED === 'true') { 
     $ga4 = $_SESSION['ga4'];
     if ( $ga4['action'] == 'purchase' && count($ga4['items']) >= 1 ){ ?>
     <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
-    	<script type="text/plain" cookie-consent="tracking">
+    	<script type="text/plain" data-cookie-consent="tracking">
     	<?php } else { ?>
       <script>
       <?php } ?>

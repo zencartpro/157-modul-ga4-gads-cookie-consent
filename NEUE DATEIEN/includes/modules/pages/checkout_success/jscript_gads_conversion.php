@@ -21,7 +21,7 @@ if ($last_order->RecordCount() > 0) {
 ?> 
 <!-- bof Google Ads Conversion Tracking-->
 <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
-<script type="text/plain" cookie-consent="targeting">
+<script type="text/plain" data-cookie-consent="targeting">
 <?php } else { ?>
 <script>
 <?php } ?>

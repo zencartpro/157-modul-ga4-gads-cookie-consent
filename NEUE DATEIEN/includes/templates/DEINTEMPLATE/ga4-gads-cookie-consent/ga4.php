@@ -9,8 +9,8 @@
  */
 if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') { ?>
 <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
-<script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_ID; ?>"></script>
-<script type="text/plain" cookie-consent="tracking">
+<script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_ID; ?>"></script>
+<script type="text/plain" data-cookie-consent="tracking">
 <?php } else { ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_ID; ?>"></script>
 <script>

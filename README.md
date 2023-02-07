@@ -55,3 +55,11 @@ Es sind also keinerlei zusätzliche Änderungen in irgendwelchen Dateien nötig.
 Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müssen Sie deren Aufrufe entsprechend anpassen, damit sie von dem Tool erfasst werden können. 
 
 Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlossen wird das Cookie Consent Banner nicht geladen, um stets einen freien Zugang zu diesen Seiten zu ermöglichen. 
+
+Credits:
+
+Dieses Modul verwendet die Cookie Consent Lösung von PrivacyPolicies:
+* https://www.privacypolicies.com/cookie-consent/
+
+Das Google Analytics GA4 Conversion Tracking basiert auf der Lösung von kanine:
+* https://github.com/kanine/zencart_enhanced_analytics

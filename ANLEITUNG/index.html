@@ -39,8 +39,7 @@
 
   <p dir="auto">Mit diesem Modul kann Google Analytics GA4 Tracking im Shop integriert werden.  Falls auch Google Ads verwendet wird, kann optional ein Conversion Tracking für Google Ads aktiviert werden.</p>
   <p dir="auto">Um Google Analytics GA4 DSGVO-konform und EU Cookie Richtlinien konform verwenden zu können, ist ein auf <a href="https://www.privacypolicies.com/cookie-consent/" rel="nofollow">https://www.privacypolicies.com/cookie-consent/</a> basierendes Cookie Consent Tool enthalten, das die entprechenden   Scripts blockiert, wenn der Verwendung von Tracking und Targeting nicht   zugestimmt wurde.</p>
-  <p dir="auto">Das Cookie Consent Banner ist multilingual, so dass in   mehrsprachigen Shops der Cookie Hinweis in der passenden Sprache   erscheint.</p>
-  <p dir="auto">Layout und Anzeigestil des Cookie Consent Banners können in der Shopadministration geändert werden.</p>
+  <p dir="auto">Das Cookie Consent Banner ist multilingual, so dass in   mehrsprachigen Shops der Cookie Hinweis in der passenden Sprache   erscheint.Layout und Anzeigestil des Cookie Consent Banners können in der Shopadministration geändert werden.</p>
   <p dir="auto">Auch die Eingabe von GA4 ID, Google Ads ID und Google Ads   Conversion Label sind admingesteuert.<br>
     Es ist kein manuelles Einfügen irgendwelcher Scripts in irgendwelchen Shopdateien nötig, das Modul ändert lediglich eine bestehende Shopdatei.<br>
     <br>
@@ -93,7 +92,7 @@ Dieses Modul bindet die Javascripts für Google Analytics und Google Ads bereits
 Es sind also keinerlei zusätzliche Änderungen in irgendwelchen Dateien nötig.<br>
 Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müssen Sie deren Aufrufe entsprechend anpassen, damit sie von dem Tool erfasst werden können. <br>
 Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlossen wird das Cookie Consent Banner nicht geladen, um stets einen freien Zugang zu diesen Seiten zu ermöglichen.
-  </p>
+</p>
 <h3>Changelog, Copyright,  Lizenz, Credits</h3>
 <p>  Changelog Version 1.1.0<br>
   2023-02-07<br>
@@ -119,8 +118,13 @@ Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlosse
 <p>This contribution is subject to version 3.0 of the GPL license available through the world-wide-web at the following url:<br>
   <a href="http://www.zen-cart-pro.at/license/3_0.txt">http://www.zen-cart-pro.at/license/3_0.txt</a><br>
   <br>
+  Credits:
+<br>
+  <br>
   Dieses Modul verwendet die Cookie Consent Lösung von PrivacyPolicies:<br>
   <a href="https://www.privacypolicies.com/cookie-consent/" target="_blank">https://www.privacypolicies.com/cookie-consent/</a></p>
+  <p>Das Google Analytics GA4 Conversion Tracking basiert auf der Lösung von kanine:<br/>
+    <a href="https://github.com/kanine/zencart_enhanced_analytics" target="_blank"> https://github.com/kanine/zencart_enhanced_analytics</a></p>
 </div>
 </div>
 </div>
@@ -131,7 +135,7 @@ Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlosse
 <div class="textcontent">
 <div class="regularlist">
 
-<h2>Installation</h2>
+<h2>Neuinstallation</h2>
 <h3>Voraussetzungen</h3>
   <br>
   <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7 deutsch geeignet</strong>.<br>
@@ -186,8 +190,13 @@ Es wird hier lediglich der Block zwischen &lt;!-- bof GA4/Gads/Cookie Consent --
 Dann spielen Sie die geänderte Datei ein.<br>
   <br>
   6)<br>
-Nehmen Sie nun unter Konfiguration &gt; GA4/Google Ads/Cookie Consent die nötigen Einstellungen vor. </p>
-<h3>&nbsp;</h3>
+Nehmen Sie nun unter Konfiguration &gt; GA4/Google Ads/Cookie Consent die nötigen Einstellungen vor. <br>
+</p>
+<h2>Update von Version 1.0.0</h2>
+
+<p>Um von Version 1.0.0 auf 1.1.0 zu aktualisieren, laden Sie alle neuen Dateien hoch, dabei werden Ihre bestehenden überschrieben.<br>
+  Clicken Sie nun im Adminbereich auf irgendeinen Menüpunkt, das Modul aktualisiert sich automatisch und unter Konfiguration &gt; 
+GA4/Google Ads/Cookie Consent ist nun der neue Menüpunkt <strong>Google Analytics Conversion Tracking aktivieren</strong> vorhanden.</p>
   </div>
 </div>
 </div>

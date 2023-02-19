@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: auto.ga4-conversions.php 2023-02-07 19:01:51Z webchills $
+ * @version $Id: auto.ga4-conversions.php 2023-02-19 10:14:51Z webchills $
  */
 
  class zcObserverGA4Conversions extends base { 
@@ -20,7 +20,8 @@
 
     switch ($notifier) {
       case 'NOTIFY_HEADER_START_CHECKOUT_SUCCESS': //  All Checkout complete/successful 
-        $order_summary = $_SESSION['order_summary'];
+        
+        $order_summary = !empty($_SESSION['order_summary']) ? $_SESSION['order_summary'] : array(); 
         
         $coupon = isset($order_summary['coupon_code']) ? $order_summary['coupon_code'] : "n/a";
         

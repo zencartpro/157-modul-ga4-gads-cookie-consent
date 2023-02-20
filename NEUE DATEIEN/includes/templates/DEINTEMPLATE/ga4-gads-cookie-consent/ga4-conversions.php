@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: ga4-conversions.php 2023-02-08 18:19:51Z webchills $
+ * @version $Id: ga4-conversions.php 2023-02-20 15:45:51Z webchills $
  */
  
 if (defined('GA4_CONVERSIONS_ENABLED') && GA4_CONVERSIONS_ENABLED === 'true') { ?>
@@ -14,7 +14,7 @@ if (defined('GA4_CONVERSIONS_ENABLED') && GA4_CONVERSIONS_ENABLED === 'true') { 
 <?php
     $gtagCustomerID = ( isset($_SESSION['customer_id']) ) ? "customerID#".$_SESSION['customer_id'] : "guest";
     $ga4 = $_SESSION['ga4'];
-    if (($ga4['action'] == 'purchase') && (count($ga4['items']) >= 1 )){ ?>
+    if (($ga4['action'] == 'purchase') && (!empty($ga4['items']))){ ?>
     <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
     	<script type="text/plain" data-cookie-consent="tracking">
     	<?php } else { ?>

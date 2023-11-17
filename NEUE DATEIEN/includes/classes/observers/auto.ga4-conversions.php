@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: auto.ga4-conversions.php 2023-02-20 16:49:51Z webchills $
+ * @version $Id: auto.ga4-conversions.php 2023-03-17 19:14:51Z webchills $
  */
 
  class zcObserverGA4Conversions extends base { 
@@ -16,14 +16,15 @@
 
   public function update(&$callingClass, $notifier, $paramsArray) {
   
-    global $db, $ga4;
+    global $db, $ga4, $order_summary;
 
     switch ($notifier) {
       case 'NOTIFY_HEADER_START_CHECKOUT_SUCCESS': //  All Checkout complete/successful 
-        
         $order_summary = !empty($_SESSION['order_summary']) ? $_SESSION['order_summary'] : array(); 
-        // prevent execution and error logs if the customer refreshes the checkout_success page and $_SESSION['order_summary'] is not available anymore
-        if (!empty($_SESSION['order_summary'])){
+        if (empty($order_summary)) {
+                    break;
+                }
+   
         $coupon = isset($order_summary['coupon_code']) ? $order_summary['coupon_code'] : "n/a";
         
         $ga4['transaction'] = array('transaction_id' => (string)$order_summary['order_number'],
@@ -49,9 +50,13 @@
           } else {
           $variantTxt = 'n/a';          
           }
+          $check_products_category = $db->Execute("select products_id, master_categories_id from " . TABLE_PRODUCTS . " where products_id = '" . (string)$items_in_cart->fields['orders_products_id'] . "'");
+          $the_categories_name= $db->Execute("select categories_name from " . TABLE_CATEGORIES_DESCRIPTION . " where categories_id= '" . $check_products_category->fields['master_categories_id'] . "' and language_id= '" . $_SESSION['languages_id'] . "'");
+
+   
           $ga4['items'][] = array('item_id' => $items_in_cart->fields['products_id'],
                                         'item_name' => $items_in_cart->fields['products_name'],                                        
-                                        'item_category' => zen_get_categories_name_from_product($items_in_cart->fields['products_id']),
+                                        'item_category' =>  $the_categories_name->fields['categories_name'],
                                         'item_variant' => $variantTxt,
                                         'price' => number_format($items_in_cart->fields['final_price'] + ($items_in_cart->fields['final_price'] *  $items_in_cart->fields['products_tax'] / 100 ),2,'.',''),
                                         'quantity' => $items_in_cart->fields['products_quantity'],
@@ -62,7 +67,7 @@
         }
         $ga4['action'] = "purchase";
         break;
-       }
+       
       default:   
       $notifyArr = explode("_", $notifier, 2);
       $ga4['action'] = ucwords(strtolower(str_replace("_", " ", $notifyArr[1])));

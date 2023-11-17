@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Cart German Specific (zencartpro adaptations)
+ * Zen Cart German Specific (158 code in 157 / zencartpro adaptations)
  * Common Template
  *
  * outputs the html header. i,e, everything that comes before the \</head\> tag
@@ -9,7 +9,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2023-01-29 05:53:39Z webchills $
+ * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2023-11-17 18:53:39Z webchills $
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
@@ -42,6 +42,13 @@ if (!class_exists('MobileDetect')) {
 <!DOCTYPE html>
 <html <?php echo HTML_PARAMS; ?>>
   <head>
+<?php
+// -----
+// Provide a notification that the <head> tag has been rendered for the current page; some scripts need to be
+// inserted just after that tag's rendered.
+//
+$zco_notifier->notify('NOTIFY_HTML_HEAD_TAG_START', $current_page_base);
+?>
   <meta charset="<?php echo CHARSET; ?>">
   <link rel="dns-prefetch" href="https://code.jquery.com">
   <title><?php echo META_TAG_TITLE; ?></title>
@@ -49,7 +56,7 @@ if (!class_exists('MobileDetect')) {
   <meta name="description" content="<?php echo META_TAG_DESCRIPTION; ?>">
   <meta name="language" content="<?php echo META_TAG_LANGUAGE; ?>" />
   <meta name="author" content="<?php echo STORE_NAME ?>">
-  <meta name="generator" content="Zen-Cart 1.5.7 - deutsche Version, https://www.zen-cart-pro.at">
+  <meta name="generator" content="Zen-Cart - deutsche Version, https://www.zen-cart-pro.at">
 <?php if (defined('ROBOTS_PAGES_TO_SKIP') && in_array($current_page_base,explode(",",constant('ROBOTS_PAGES_TO_SKIP'))) || $current_page_base=='down_for_maintenance' || $robotsNoIndex === true) { ?>
   <meta name="robots" content="noindex, nofollow">
 <?php } ?>
@@ -86,7 +93,7 @@ $manufacturers_id = (isset($_GET['manufacturers_id'])) ? $_GET['manufacturers_id
 <!-- bof GA4/Gads/Cookie Consent -->
 <?php require($template->get_template_dir('ga4-gads-cookie-consent.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/ga4-gads-cookie-consent.php'); ?>
 <!-- eof GA4/Gads/Cookie Consent -->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <?php if (file_exists(DIR_WS_TEMPLATE . "jscript/jquery.min.js")) { ?>
 <script type="text/javascript">window.jQuery || document.write(unescape('%3Cscript type="text/javascript" src="<?php echo $template->get_template_dir('.js',DIR_WS_TEMPLATE, $current_page_base,'jscript'); ?>/jquery.min.js"%3E%3C/script%3E'));</script>
 <?php } ?>
@@ -155,7 +162,7 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
 }
 ?>
   <script type="text/javascript">document.documentElement.className = 'no-fouc';</script>
-  <link rel="stylesheet" href="extras/fontawesome/6.2.1/css/all.css" />
+  <link rel="stylesheet" href="extras/fontawesome/6.4.0/css/all.css" />
 <?php
   $zco_notifier->notify('NOTIFY_HTML_HEAD_END', $current_page_base);
 ?>

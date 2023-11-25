@@ -5,7 +5,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: auto.ga4-conversions.php 2023-03-17 19:14:51Z webchills $
+ * @version $Id: auto.ga4-conversions.php 2023-11-25 15:11:51Z webchills $
  */
 
  class zcObserverGA4Conversions extends base { 
@@ -20,6 +20,7 @@
 
     switch ($notifier) {
       case 'NOTIFY_HEADER_START_CHECKOUT_SUCCESS': //  All Checkout complete/successful 
+      $langcat = (isset($_SESSION['languages_id'])) ? (int)$_SESSION['languages_id'] : 1; 
         $order_summary = !empty($_SESSION['order_summary']) ? $_SESSION['order_summary'] : array(); 
         if (empty($order_summary)) {
                     break;
@@ -44,19 +45,25 @@
         $i = 0 ; 
         
         while (!$items_in_cart->EOF) {          
+        $the_categories_name = $db->Execute("SELECT cd.categories_name FROM " . TABLE_CATEGORIES_DESCRIPTION ." cd, ". TABLE_PRODUCTS_TO_CATEGORIES . " p2c WHERE cd.categories_id = p2c.categories_id and p2c.products_id = " . (string)$items_in_cart->fields['products_id'] . " AND cd.language_id =".$langcat);
+         
+        	
+          if (!empty ($the_categories_name->fields['categories_name'])){
+          $itemcategory = $the_categories_name->fields['categories_name'];	
+          } else {
+          $itemcategory = '';          
+          }
           $variant = $db->Execute("SELECT products_options_values FROM " . TABLE_ORDERS_PRODUCTS_ATTRIBUTES . " WHERE orders_products_id = " . (string)$items_in_cart->fields['orders_products_id']);
           if (!empty ($variant->fields['products_options_values'])){
           $variantTxt = $variant->fields['products_options_values'];	
           } else {
           $variantTxt = 'n/a';          
           }
-          $check_products_category = $db->Execute("select products_id, master_categories_id from " . TABLE_PRODUCTS . " where products_id = '" . (string)$items_in_cart->fields['orders_products_id'] . "'");
-          $the_categories_name= $db->Execute("select categories_name from " . TABLE_CATEGORIES_DESCRIPTION . " where categories_id= '" . $check_products_category->fields['master_categories_id'] . "' and language_id= '" . $_SESSION['languages_id'] . "'");
-
-   
+         
+          
           $ga4['items'][] = array('item_id' => $items_in_cart->fields['products_id'],
                                         'item_name' => $items_in_cart->fields['products_name'],                                        
-                                        'item_category' =>  $the_categories_name->fields['categories_name'],
+                                        'item_category' =>  $itemcategory,
                                         'item_variant' => $variantTxt,
                                         'price' => number_format($items_in_cart->fields['final_price'] + ($items_in_cart->fields['final_price'] *  $items_in_cart->fields['products_tax'] / 100 ),2,'.',''),
                                         'quantity' => $items_in_cart->fields['products_quantity'],

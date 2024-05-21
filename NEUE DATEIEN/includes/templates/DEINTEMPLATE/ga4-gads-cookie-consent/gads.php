@@ -8,6 +8,16 @@
  * @version $Id: gads.php 2024-05-21 15:51:51Z webchills $
  */
 if (defined('GA4_GADS_ENABLED') && GA4_GADS_ENABLED === 'true') { ?>
+	<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
 <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
 <script type="text/plain" data-cookie-consent="targeting" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_GADS_ID; ?>"></script>
 <script type="text/plain" data-cookie-consent="targeting">

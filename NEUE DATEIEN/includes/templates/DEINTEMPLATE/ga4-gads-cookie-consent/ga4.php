@@ -1,11 +1,11 @@
 <?php
 /**
  * @package GA4/Gads/Cookie Consent
- * @copyright Copyright 2003-2023 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: ga4.php 2023-02-07 16:15:51Z webchills $
+ * @version $Id: ga4.php 2024-05-21 15:41:51Z webchills $
  */
 if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') { ?>
 <?php if (defined('GA4_COOKIE_CONSENT_ENABLED') && GA4_COOKIE_CONSENT_ENABLED === 'true'){ ?>
@@ -14,10 +14,15 @@ if (defined('GA4_ENABLED') && GA4_ENABLED === 'true') { ?>
 <?php } else { ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA4_ID; ?>"></script>
 <script>
-<?php } ?>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'update', {
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted',    
+  });
   gtag('js', new Date());
-  gtag('config', '<?php echo GA4_ID; ?>');  
+  gtag('config', '<?php echo GA4_GADS_ID; ?>');
 </script>
 <?php }

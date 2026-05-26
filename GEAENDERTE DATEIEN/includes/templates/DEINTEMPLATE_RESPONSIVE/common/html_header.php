@@ -5,11 +5,11 @@
  *
  * outputs the html header. i,e, everything that comes before the \</head\> tag
  * 
- * @copyright Copyright 2003-2023 Zen Cart Development Team
+ * @copyright Copyright 2003-2026 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2023-11-19 08:20:39Z webchills $
+ * @version $Id: html_header.php for GA4/Gads/Cookie Consent 2026-05-26 08:20:39Z webchills $
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
@@ -162,7 +162,7 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
 }
 ?>
   <script type="text/javascript">document.documentElement.className = 'no-fouc';</script>
-  <link rel="stylesheet" href="extras/fontawesome/6.4.0/css/all.css" />
+  <link rel="stylesheet" href="extras/fontawesome/7.2.0/css/all.css" />
 <?php
   $zco_notifier->notify('NOTIFY_HTML_HEAD_END', $current_page_base);
 ?>

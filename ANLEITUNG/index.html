@@ -1,7 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Google Analytics GA4, Google Ads, Cookie Consent 1.1.1 für Zen Cart 1.5.7 deutsch</title>
+<title>Google Analytics GA4, Google Ads, Cookie Consent 1.4.0 für Zen Cart 1.5.7 deutsch</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-language" content="de">
@@ -12,7 +12,7 @@
 <body>
 <div id="wrapper">
 <div id="header">
-<h1>GA4 / Google Ads / Cookie Consent 1.2.0 für Zen Cart 1.5.7 deutsch</h1>
+<h1>GA4 / Google Ads / Cookie Consent 1.4.0 für Zen Cart 1.5.7 deutsch</h1>
 </div>
 
 <div id="slidetabsmenu" style="display: none;">
@@ -94,7 +94,13 @@ Sollten Sie in Ihrem Shop aber noch andere Trackingscripts verwenden, dann müss
 Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlossen wird das Cookie Consent Banner nicht geladen, um stets einen freien Zugang zu diesen Seiten zu ermöglichen.
 </p>
 <h3>Changelog, Copyright,  Lizenz, Credits</h3>
-<p>  Changelog Version 1.3.0<br>
+<p>  Changelog Version 1.4.0<br>
+2026-05-26<br>
+<br>
+- Anpassungen für 1.5.7k und PHP 8.4<br>
+  <br>
+
+ Changelog Version 1.3.0<br>
 2024-05-21<br>
 <br>
 - Anpassungen für Google Einwilligungsmodus Version 2<br>
@@ -122,10 +128,10 @@ Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlosse
 <br>
 - initial release
 </p>
-<p> (c) 2023-2024 webchills (<a href="https://www.webchills.at" target="_blank">www.webchills.at</a>)<br>
+<p> (c) 2023-2026 webchills (<a href="https://www.webchills.at" target="_blank">www.webchills.at</a>)<br>
 <br>
  Portions Copyright (c) 2003 osCommerce<br>
-  Portions Copyright     (c) 2003-2023 Zen Cart</p>
+  Portions Copyright     (c) 2003-2026 Zen Cart</p>
 <p>This contribution is subject to version 3.0 of the GPL license available through the world-wide-web at the following url:<br>
   <a href="http://www.zen-cart-pro.at/license/3_0.txt">http://www.zen-cart-pro.at/license/3_0.txt</a><br>
   <br>
@@ -149,8 +155,8 @@ Auf den Seiten Datenschutz, AGB, Impressum und Wegen Wartungsarbeiten geschlosse
 <h2>Neuinstallation</h2>
 <h3>Voraussetzungen</h3>
   <br>
-  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7g deutsch geeignet</strong>.<br>
-    Stellen Sie sicher, dass Sie Ihren Shop auf 1.5.7g aktualisiert haben, bevor Sie dieses Modul installieren.
+  <p>Dieses Modul ist<strong> nur für Zen Cart 1.5.7k deutsch geeignet</strong>.<br>
+    Stellen Sie sicher, dass Sie Ihren Shop auf 1.5.7k aktualisiert haben, bevor Sie dieses Modul installieren.
     <br>
     <br>
     <strong>WICHTIG:</strong><br>    
@@ -196,8 +202,8 @@ Dann nun alle Dateien/Ordner aus dem Ordner NEUE DATEIEN in der vorgegebenen Str
 Im Ordner GEAENDERTE DATEIEN befinden sich Beispieldateien für die einzige Datei, die von diesem Modul geändert wird.<br>
 Falls Sie das responsive Standardtemplate responsive_classic aktiv haben, verwenden Sie  die Datei im Ordner DEINTEMPLATE_RESPONSIVE.<br>
 Für alle anderen Templates, verwenden Sie die Datei im Ordner DEINTEMPLATE <br>
-Wenn Sie Zen Cart 1.5.7 gerade frisch installiert haben und noch keinerlei Änderungen an den Dateien vorgenommen haben, können Sie nun  die includes/templates/DEINTEMPLATE/common/html_header.php bzw. includes/templates/DEINTEMPLATE_RESPONSIVE/common/html_header.php aus dem Ordner GEAENDERTE DATEIEN in der vorgegebenen Struktur in die Zen Cart Installation hochladen und die bestehende überschreiben.<br>
-Wenn Sie Zen Cart 1.5.7 schon länger im Einsatz haben und schon einmal Änderungen an Dateien vorgenommen oder andere Module eingebaut haben,   dann laden Sie die Datei keinesfalls einfach hoch. <br>
+Wenn Sie Zen Cart 1.5.7k gerade frisch installiert haben und noch keinerlei Änderungen an den Dateien vorgenommen haben, können Sie nun  die includes/templates/DEINTEMPLATE/common/html_header.php bzw. includes/templates/DEINTEMPLATE_RESPONSIVE/common/html_header.php aus dem Ordner GEAENDERTE DATEIEN in der vorgegebenen Struktur in die Zen Cart Installation hochladen und die bestehende überschreiben.<br>
+Wenn Sie Zen Cart 1.5.7k schon länger im Einsatz haben und schon einmal Änderungen an Dateien vorgenommen oder andere Module eingebaut haben,   dann laden Sie die Datei keinesfalls einfach hoch. <br>
 Vergleichen Sie sie stattdessen mit der   entsprechenden Datei in Ihrem Shop und nehmen Sie die Änderungen   manuell per WinMerge oder BeyondCompare vor.<br>
 Es wird hier lediglich der Block zwischen &lt;!-- bof GA4/Gads/Cookie Consent --&gt; und &lt;!-- eof GA4/Gads/Cookie Consent --&gt; eingefügt. <br>
 Dann spielen Sie die geänderte Datei ein.<br>
@@ -205,11 +211,6 @@ Dann spielen Sie die geänderte Datei ein.<br>
   6)<br>
 Nehmen Sie nun unter Konfiguration &gt; GA4/Google Ads/Cookie Consent die nötigen Einstellungen vor. <br>
 </p>
-<h2>Update von Version 1.1.0</h2>
-
-<p>Um von Version 1.1.0 auf 1.1.1 zu aktualisieren, laden Sie alle neuen Dateien hoch, dabei werden Ihre bestehenden überschrieben.<br>
-  Clicken Sie nun im Adminbereich auf irgendeinen Menüpunkt, das Modul aktualisiert sich automatisch und unter Konfiguration &gt; 
-GA4/Google Ads/Cookie Consent ist nun der neue Menüpunkt <strong>Google Analytics Conversion Tracking aktivieren</strong> vorhanden.</p>
   </div>
 </div>
 </div>
